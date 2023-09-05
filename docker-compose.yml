@@ -10,5 +10,15 @@ services:
       - POSTGRES_DB=bookmark_api
     networks:
       - freecodecamp
+  test-db:
+    image: postgres:latest
+    ports:
+      - 5435:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secretpassword
+      - POSTGRES_DB=bookmark_api
+    networks:
+      - freecodecamp
 networks:
   freecodecamp:
